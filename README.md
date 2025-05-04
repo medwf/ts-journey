@@ -1,64 +1,40 @@
-# TypeScript Journey 🚀
+# TypeScript exercises
 
-Welcome to my TypeScript learning repository! This is where I experiment with TypeScript concepts and build my understanding from the ground up.
+Start your journey here: https://typescript-exercises.github.io/
 
-## 📚 Topics Covered
+The goal: Let everyone play with many different TypeScript features
+and get an overview of TypeScript capabilities and principles.
 
-- ✅ Basic Types
-- ✅ Functions and Arrow Functions
-- ✅ Interfaces & Types
-- ✅ Classes & Inheritance
-- ✅ Generics
-- ✅ Type Narrowing
-- ✅ Modules & Namespaces
-- ✅ Utility Types
+Sponsor me: https://github.com/sponsors/mdevils
 
-## 📁 Folder Structure
+## Things to cover
 
-Each topic has its own folder under `/src`. Files are named clearly for easy understanding and experimentation.
+1.  Basic typing.
+2.  Refining types.
+3.  Union types.
+4.  Merged types.
+5.  Generics.
+6.  Type declarations.
+7.  Module augmentation.
+8.  Advanced type mapping.
 
-## 🚀 How to Run
+9.  tasks in tasks folder with solutions
 
-1. Install dependencies:
+## Rules and principles
 
-```bash
-pnpm install
-```
+1.  Avoid using `any` type at all costs.
 
-2. Compile TypeScript to JavaScript:
+2.  Difficulty quickly grows one exercise after another.
 
-```bash
-pnpm tsc
-```
+3.  Feel free to send pull requests if you've come up
+    with improvements!
 
-3. Run a file (example):
+4.  Provide feedback to the creator of these exercises.
 
-```bash
-node dist/01-basics/main.js
-```
+5.  Enjoy.
 
-## 🧪 Tests
+## Contributing
 
-Simple test cases can be found under the `tests/` directory. Run with:
+1.  Your contributions are welcome.
 
-```bash
-pnpm test
-```
-
-> (Requires a testing setup like `vitest` or `jest`)
-
-## 📦 Tools Used
-
-- TypeScript
-- PNPM
-- Node.js
-
----
-
-## 🌱 Motivation
-
-This project is meant for:
-
-- Practicing TypeScript syntax
-- Creating reproducible examples
-- Preparing for interviews and real-world usage
+2.  `pnpm install` starts the development server.
