@@ -58,23 +58,46 @@ export function logPerson(person: Person) {
   );
 }
 
-export function getObjectKeys(criteria) {
 
-}
+// function overload
+export function filterPersons(
+  person: Person[],
+  personType: 'user',
+  criteria: Partial<Omit<User, 'type'>>
+): User[];
 
-export function filterPersons(persons: Person[], personType: string, criteria: unknown): unknown[] {
+export function filterPersons(
+  person: Person[],
+  personType: 'admin',
+  criteria: Partial<Omit<Admin, 'type'>>
+): Admin[];
+
+export function filterPersons(persons: Person[],
+  personType: 'user' | 'admin',
+  criteria: Partial<Omit<User, 'type'>> | Partial<Omit<Admin, 'type'>>
+): Person[] {
   return persons
     .filter((person) => person.type === personType)
     .filter((person) => {
-      let criteriaKeys = Object.keys(criteria) as (keyof Person)[];
+      // let criteriaKeys = Object.keys(criteria) as (keyof Person)[];
+      let criteriaKeys = getObjectKeys(criteria);
       return criteriaKeys.every((fieldName) => {
         return person[fieldName] === criteria[fieldName];
       });
     });
 }
 
+// criteria has two type so we handle that by this function.
+export function getObjectKeys<T extends object>(obj: T): (keyof T)[] {
+  return Object.keys(obj) as (keyof T)[];
+}
+
 export const usersOfAge23 = filterPersons(persons, 'user', { age: 23 });
 export const adminsOfAge23 = filterPersons(persons, 'admin', { age: 23 });
+
+// this is error filterPersons shold not filter type in criteria
+// deleted type using Omit.
+// export const adminsOfAge2 = filterPersons(persons, 'admin', { age: 23, type: 'user' });
 
 console.log('Users of age 23:');
 usersOfAge23.forEach(logPerson);
